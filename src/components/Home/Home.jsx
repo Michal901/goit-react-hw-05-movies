@@ -9,10 +9,13 @@ export const Home = () => {
   useEffect(() => {
     const fetchTrendingMovies = () => {
       try {
-        const response = axios.get(
-          `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
-        );
+        const response = axios
+          .get(
+            `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
+          )
+          .then(response => response.json);
         setTrendingMovies(response.data.results);
+        console.log(response);
         console.log(trendingMovies);
       } catch (error) {
         console.log(error);
@@ -24,7 +27,9 @@ export const Home = () => {
   return (
     <div>
       <h1>Trending Movies</h1>
-      <ul></ul>
+      <ul>
+        <li>{trendingMovies}</li>
+      </ul>
     </div>
   );
 };
