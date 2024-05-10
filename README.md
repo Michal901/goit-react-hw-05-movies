@@ -1,15 +1,18 @@
+
+
 # React homework template
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
+Ten projekt został stworzony przy pomocy
+[Create React App](https://github.com/facebook/create-react-app). W celu
+zapoznania się z konfiguracją dodatkowych opcji
+[zobacz dokumentację](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Створення репозиторію за шаблоном
+## Utworzenie repozytorium zgodnie z szablonem
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
-свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
-`«Create a new repository»`, як показано на зображенні.
+Wykorzystaj to repozytorium organizacji GoIT jako szablon do utworzenia
+repozytorium własnego projektu. W tym celu kliknij na przycisk
+`"Use this template"` i wybierz opcję `"Create a new repository"`, jak pokazano
+na rysunku.
 
 ![Creating repo from a template step 1](./assets/template-step-1.png)
 
