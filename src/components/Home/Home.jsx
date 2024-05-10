@@ -7,20 +7,18 @@ export const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
-    const fetchTrendingMovies = () => {
+    const fetchTrendingMovies = async () => {
       try {
-        const response = axios
-          .get(
-            `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
-          )
-          .then(response => response.json);
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
+        );
+
         setTrendingMovies(response.data.results);
-        console.log(response);
-        console.log(trendingMovies);
       } catch (error) {
         console.log(error);
       }
     };
+    console.log(trendingMovies);
     fetchTrendingMovies();
   }, []);
 
@@ -28,7 +26,9 @@ export const Home = () => {
     <div>
       <h1>Trending Movies</h1>
       <ul>
-        <li>{trendingMovies}</li>
+        {trendingMovies.map(movie => (
+          <li key={movie.id}>{movie.title || movie.name}</li>
+        ))}
       </ul>
     </div>
   );
