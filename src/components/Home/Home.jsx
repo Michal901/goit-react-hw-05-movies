@@ -1,3 +1,13 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 export const Home = () => {
-  return <>Trending Movies</>;
+  const [trendingMovies, setTrendingMovies] = useState('');
+
+  return (
+    <div>
+      <h1>Trending Movies</h1>
+      <ul></ul>
+    </div>
+  );
 };
