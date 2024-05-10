@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { API_KEY } from 'constants/API_KEY/ApiKey';
+
+import styles from './Home.module.css';
 
 export const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -23,11 +26,13 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.home}>
       <h1>Trending Movies</h1>
-      <ul>
+      <ul className={styles.homeList}>
         {trendingMovies.map(movie => (
-          <li key={movie.id}>{movie.title || movie.name}</li>
+          <Link to={movie.poster_path} key={movie.id}>
+            {movie.title || movie.name}
+          </Link>
         ))}
       </ul>
     </div>
