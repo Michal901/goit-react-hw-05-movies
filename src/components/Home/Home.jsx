@@ -15,7 +15,7 @@ export const Home = () => {
         const response = await axios.get(
           `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
         );
-
+        console.log(response);
         setTrendingMovies(response.data.results);
       } catch (error) {
         console.log(error);
