@@ -1,7 +1,8 @@
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 import styles from './Movies.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export const Movies = () => {
   const [movieSearch, setMovieSearch] = useState('');
@@ -30,12 +31,11 @@ export const Movies = () => {
       />
       <button onClick={fetchMovies}>Search</button>
       <ul>
-        {movies.map(movie => {
+        {movies.map(movie => (
           <li key={movie.id}>
-            <p>{movie.title || movie.name}</p>
-            <img src={movie.poster} alt="" />
-          </li>;
-        })}
+            <Link>{movie.title || movie.name}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
