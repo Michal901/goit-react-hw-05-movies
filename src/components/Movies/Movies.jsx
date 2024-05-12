@@ -18,7 +18,7 @@ export const Movies = () => {
 
       setMovies(response.data.results);
     } catch (error) {
-      console.log(error);
+      console.log(`Fetch movie error is:${error}`);
     }
   };
 
