@@ -1,3 +1,3 @@
 export const Reviews = () => {
-  return <></>;
+  return <>podstrona reviews</>;
 };
