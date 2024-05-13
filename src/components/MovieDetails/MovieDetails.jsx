@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 import axios from 'axios';
 
@@ -27,8 +27,15 @@ export const MovieDetails = () => {
       {movieDetails ? (
         <div>
           <h2>{movieDetails.title}</h2>
+          <p>User score: {`${Math.floor(movieDetails.vote_average * 10)} %`}</p>
           <p>{movieDetails.overview}</p>
           {/* Wyświetl inne szczegóły filmu */}
+          <div>
+            <p>Additional information:</p>
+            <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+            <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+          </div>
+          <Outlet />
         </div>
       ) : (
         <div>Loading...</div>
