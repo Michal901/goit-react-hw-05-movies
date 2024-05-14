@@ -29,7 +29,6 @@ export const MovieDetails = () => {
           <h2>{movieDetails.title}</h2>
           <p>User score: {`${Math.floor(movieDetails.vote_average * 10)} %`}</p>
           <p>{movieDetails.overview}</p>
-          {/* Wyświetl inne szczegóły filmu */}
           <div>
             <p>Additional information:</p>
             <Link to={`/movies/${movieId}/cast`}>Cast</Link>
