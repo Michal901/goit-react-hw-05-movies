@@ -11,6 +11,10 @@ export const Movies = () => {
 
   const handleSearch = () => {
     setSearching(true);
+
+    setTimeout(() => {
+      setSearching(false);
+    }, 500);
   };
 
   return (
