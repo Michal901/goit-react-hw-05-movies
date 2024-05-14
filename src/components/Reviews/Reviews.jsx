@@ -13,6 +13,7 @@ export const Reviews = () => {
       <DataFetcher
         url={`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`}
         setData={setMovieDetails}
+        dataType="results"
       />
       {movieDetails && (
         <ul>

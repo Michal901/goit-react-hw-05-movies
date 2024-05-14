@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const DataFetcher = ({ url, setData }) => {
+export const DataFetcher = ({ url, dataType, setData }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
-        setData(response.data.results);
+        if (dataType === 'results') {
+          setData(response.data.results);
+        } else if (dataType === 'cast') {
+          setData(response.data.cast);
+        } else {
+          setData(response.data);
+        }
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
     fetchData();
-  }, [url, setData]);
+  }, [url, setData, dataType]);
 
   if (loading) {
     return <div>Loading...</div>;

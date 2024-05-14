@@ -1,40 +1,36 @@
+import { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { DataFetcher } from 'components/DataFetcher/DataFetcher';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 import styles from './Movies.module.css';
-import { useState } from 'react';
-import axios from 'axios';
-import { Link, useSearchParams } from 'react-router-dom';
 
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
-
-  const fetchMovies = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchParams.get(
-          'query'
-        )}`
-      );
-
-      setMovies(response.data.results);
-    } catch (error) {
-      console.log(`Fetch movie error is:${error}`);
-    }
-  };
+  const [searching, setSearching] = useState(false);
 
   const handleSearch = () => {
-    fetchMovies();
+    setSearching(true);
   };
 
   return (
     <div className={styles.moviesWrapper}>
+      {searching && (
+        <DataFetcher
+          url={`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchParams.get(
+            'query'
+          )}`}
+          dataType="results"
+          setData={setMovies}
+        />
+      )}
       <input
         onChange={e => {
           setSearchParams({ query: e.target.value });
         }}
         type="text"
       />
-      <button onClick={handleSearch}>Search</button>{' '}
+      <button onClick={handleSearch}>Search</button>
       <ul>
         {movies.map(movie => (
           <li key={movie.id}>
