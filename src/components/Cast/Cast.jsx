@@ -31,8 +31,11 @@ export const Cast = () => {
       <ul>
         {movieDetails.map(movie => (
           <li key={movie.id}>
-            {/* <img src="" alt={movie.name} /> */}
             <p>{movie.name}</p>
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${movie.profile_path}`}
+              alt={movie.name}
+            />
             <div>
               <p>Character:</p>
               <p>{movie.character}</p>
