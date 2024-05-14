@@ -22,18 +22,24 @@ export const Cast = () => {
     fetchMovieDetails();
   }, [movieId]);
 
+  if (!movieDetails) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      {movieDetails.map(movie => (
-        <li key={movie.id}>
-          <img src={3} alt={movie.name} />
-          <p>{movie.name}</p>
-          <div>
-            <p>Character:</p>
-            <p>{movie.character}</p>
-          </div>
-        </li>
-      ))}
+      <ul>
+        {movieDetails.map(movie => (
+          <li key={movie.id}>
+            {/* <img src="" alt={movie.name} /> */}
+            <p>{movie.name}</p>
+            <div>
+              <p>Character:</p>
+              <p>{movie.character}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
