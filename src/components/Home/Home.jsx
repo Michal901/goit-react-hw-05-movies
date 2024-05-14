@@ -29,7 +29,7 @@ export const Home = () => {
       <h1>Trending Movies</h1>
       <ul className={styles.homeList}>
         {trendingMovies.map(movie => (
-          <Link to={movie.poster_path} key={movie.id}>
+          <Link to={`/movies/${movie.id}`} key={movie.id}>
             {movie.title || movie.name}
           </Link>
         ))}
