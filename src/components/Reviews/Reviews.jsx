@@ -29,7 +29,6 @@ export const Reviews = () => {
           )}
         </ul>
       )}
-      {console.log(movieDetails)}
     </div>
   );
 };

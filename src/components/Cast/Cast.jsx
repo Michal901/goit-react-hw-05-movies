@@ -50,8 +50,6 @@ export const Cast = () => {
           `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
         );
         setMovieDetails(response.data.cast);
-
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
