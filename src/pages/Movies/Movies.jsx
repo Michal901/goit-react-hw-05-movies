@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { DataFetcher } from 'components/DataFetcher/DataFetcher';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 import styles from './Movies.module.css';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -36,11 +37,7 @@ export const Movies = () => {
       />
       <button onClick={handleSearch}>Search</button>
       <ul>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title || movie.name}</Link>
-          </li>
-        ))}
+        <MoviesList movies={movies} />
       </ul>
     </div>
   );
