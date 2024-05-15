@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
@@ -42,4 +44,7 @@ export const MovieDetails = () => {
       )}
     </>
   );
+};
+MovieDetails.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };
