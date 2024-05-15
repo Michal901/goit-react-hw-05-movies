@@ -34,6 +34,7 @@
 //   );
 // };
 
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 import { useEffect, useState } from 'react';
@@ -81,4 +82,7 @@ export const Cast = () => {
       ))}
     </ul>
   );
+};
+Cast.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -28,4 +30,9 @@ export const DataFetcher = ({ url, dataType, setData }) => {
   }
 
   return null;
+};
+DataFetcher.propTypes = {
+  url: PropTypes.string.isRequired,
+  dataType: PropTypes.oneOf(['results', 'cast', undefined]).isRequired,
+  setData: PropTypes.func.isRequired,
 };
