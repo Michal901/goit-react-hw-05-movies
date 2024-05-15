@@ -1,0 +1,11 @@
+.reviews {
+  margin-top: 1rem;
+}
+.reviews li {
+  padding: 1rem 0;
+  border-bottom: 1px solid white;
+}
+.reviews li h4 {
+  padding-bottom: 1rem;
+  text-align: center;
+}

@@ -39,6 +39,8 @@ import { API_KEY } from 'constants/API_KEY/ApiKey';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import styles from './Cast.module.css';
+
 export const Cast = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -63,22 +65,20 @@ export const Cast = () => {
   }
 
   return (
-    <>
-      <ul>
-        {movieDetails.map(movie => (
-          <li key={movie.id}>
-            <p>{movie.name}</p>
-            <img
-              src={`https://image.tmdb.org/t/p/w200/${movie.profile_path}`}
-              alt={movie.name}
-            />
-            <div>
-              <p>Character:</p>
-              <p>{movie.character}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className={styles.cast}>
+      {movieDetails.map(movie => (
+        <li key={movie.id}>
+          <p>{movie.name}</p>
+          <img
+            src={`https://image.tmdb.org/t/p/w200/${movie.profile_path}`}
+            alt={movie.name}
+          />
+          <div>
+            <p>Character:</p>
+            <p>{movie.character}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };

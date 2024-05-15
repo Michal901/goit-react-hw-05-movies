@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { DataFetcher } from 'components/DataFetcher/DataFetcher';
@@ -41,4 +43,7 @@ export const Movies = () => {
       </ul>
     </div>
   );
+};
+Movies.propTypes = {
+  movies: PropTypes.array.isRequired,
 };

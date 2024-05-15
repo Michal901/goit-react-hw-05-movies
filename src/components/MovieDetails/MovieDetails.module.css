@@ -1,0 +1,33 @@
+.movieDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  width: 800px;
+}
+.infoCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.infoWrapper {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.infoWrapper a {
+  border: 1px solid white;
+  width: 80px;
+  padding: 0.25rem;
+  text-align: center;
+}
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: absolute;
+  left: 20rem;
+  top: 1.35rem;
+}

@@ -3,6 +3,8 @@ import { DataFetcher } from '../DataFetcher/DataFetcher';
 import { useParams } from 'react-router-dom';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 
+import styles from './Reviews.module.css';
+
 export const Reviews = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
@@ -16,7 +18,7 @@ export const Reviews = () => {
         dataType="results"
       />
       {movieDetails && (
-        <ul>
+        <ul className={styles.reviews}>
           {movieDetails.length > 0 ? (
             movieDetails.map(movie => (
               <li key={movie.id}>

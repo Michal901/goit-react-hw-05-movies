@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
+
+import { DataFetcher } from 'components/DataFetcher/DataFetcher';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 import { API_KEY } from 'constants/API_KEY/ApiKey';
 
 import styles from './Home.module.css';
-import { DataFetcher } from 'components/DataFetcher/DataFetcher';
-import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -22,4 +25,7 @@ export const Home = () => {
       </ul>
     </div>
   );
+};
+Home.propTypes = {
+  movies: PropTypes.array.isRequired,
 };

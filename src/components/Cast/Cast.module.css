@@ -1,0 +1,18 @@
+.cast {
+  text-align: center;
+}
+.cast li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.cast li img {
+  width: 300px;
+}
+.cast li p {
+  font-size: 1.5rem;
+}
