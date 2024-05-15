@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+import { useState } from 'react';
 import { DataFetcher } from '../DataFetcher/DataFetcher';
 import { useParams } from 'react-router-dom';
 import { API_KEY } from 'constants/API_KEY/ApiKey';
@@ -33,4 +35,7 @@ export const Reviews = () => {
       )}
     </div>
   );
+};
+Reviews.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };
