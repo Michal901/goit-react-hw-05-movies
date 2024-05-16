@@ -33,12 +33,15 @@ export const MovieDetails = () => {
                 alt={movieDetails.title}
               />
             </div>
-            <div>
+            <div className={styles.wrapper}>
               <h2>{movieDetails.title}</h2>
               <p>
-                User score: {`${Math.floor(movieDetails.vote_average * 10)} %`}
+                User score:{' '}
+                <strong>
+                  {`${Math.floor(movieDetails.vote_average * 10)} %`}
+                </strong>
               </p>
-              <p>{movieDetails.overview}</p>
+              <p className={styles.movieDescription}>{movieDetails.overview}</p>
             </div>
           </div>
 

@@ -36,3 +36,11 @@
   flex-direction: row;
   gap: 1rem;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.movieDescription {
+  width: 25rem;
+}
