@@ -1,7 +1,13 @@
 .sharedLayout nav {
   padding: 1rem 2rem;
 }
+.sharedLayout nav {
+  display: flex;
+}
 .sharedLayout nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 1.5rem;
   padding-right: 1rem;
 }

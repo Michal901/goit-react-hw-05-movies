@@ -26,10 +26,22 @@ export const MovieDetails = () => {
             <FaArrowLeft />
             Back to home
           </Link>
+          <div className={styles.containerr}>
+            <div>
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
+                alt={movieDetails.title}
+              />
+            </div>
+            <div>
+              <h2>{movieDetails.title}</h2>
+              <p>
+                User score: {`${Math.floor(movieDetails.vote_average * 10)} %`}
+              </p>
+              <p>{movieDetails.overview}</p>
+            </div>
+          </div>
 
-          <h2>{movieDetails.title}</h2>
-          <p>User score: {`${Math.floor(movieDetails.vote_average * 10)} %`}</p>
-          <p>{movieDetails.overview}</p>
           <div className={styles.infoCont}>
             <p>Additional information:</p>
             <div className={styles.infoWrapper}>
@@ -37,6 +49,7 @@ export const MovieDetails = () => {
               <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
             </div>
           </div>
+
           <Outlet />
         </div>
       ) : (

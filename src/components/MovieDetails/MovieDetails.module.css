@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  width: 800px;
+  width: 1200px;
 }
 .infoCont {
   display: flex;
@@ -28,6 +28,11 @@
   align-items: center;
   gap: 0.25rem;
   position: absolute;
-  left: 20rem;
+  right: 20rem;
   top: 1.35rem;
+}
+.containerr {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
